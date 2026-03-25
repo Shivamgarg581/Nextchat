@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexChat - Real-time AI Chat</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h1>NexChat</h1>
+      <div class="auth-panel">
+        <input id="username" placeholder="Username" />
+        <input id="email" placeholder="Email" />
+        <input id="password" placeholder="Password" type="password" />
+        <div class="row">
+          <button id="signupBtn">Sign up</button>
+          <button id="loginBtn">Login</button>
+        </div>
+        <small id="authStatus"></small>
+      </div>
+
+      <section>
+        <h3>Stories (24h)</h3>
+        <textarea id="storyText" placeholder="Post story..."></textarea>
+        <button id="postStoryBtn">Post Story</button>
+        <ul id="storyList"></ul>
+      </section>
+
+      <section>
+        <h3>Music Mode</h3>
+        <input id="musicTitle" placeholder="Song title" />
+        <input id="musicUrl" placeholder="Spotify/YouTube URL" />
+        <button id="shareMusicBtn">Share Now Playing</button>
+        <div id="musicFeed"></div>
+      </section>
+
+      <a href="/legal.html">Legal & Privacy</a>
+    </aside>
+
+    <main class="chat-area">
+      <header>
+        <h2>Global Chat</h2>
+        <span id="presence"></span>
+      </header>
+      <div id="messages" class="messages"></div>
+      <div id="typing"></div>
+      <div class="composer">
+        <input id="messageInput" placeholder="Type a message" />
+        <button id="sendBtn">Send</button>
+      </div>
+      <div class="ai-tools">
+        <h3>AI Assistant</h3>
+        <textarea id="aiInput" placeholder="Paste message or chat snippet"></textarea>
+        <div class="row">
+          <button data-mode="reply" class="aiBtn">Smart Reply</button>
+          <button data-mode="summarize" class="aiBtn">Summarize</button>
+          <button data-mode="rephrase" class="aiBtn">Rephrase</button>
+        </div>
+        <pre id="aiOutput"></pre>
+      </div>
+    </main>
+
+    <aside class="admin-panel">
+      <h3>Moderation Admin</h3>
+      <input id="banWord" placeholder="Add banned word" />
+      <button id="addBanBtn">Add</button>
+      <button id="loadAdminBtn">Load Admin Data</button>
+      <pre id="adminOutput"></pre>
+      <footer>
+        Support: <a href="mailto:shivgarg597@gmail.com">shivgarg597@gmail.com</a>
+      </footer>
+    </aside>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
